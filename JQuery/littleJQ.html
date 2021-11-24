@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Little Calculator</title>
+		<link rel=stylesheet href="css/style.css">
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script src="js/calculate.js"></script>
+	</head>
+	<body>
+		<table>
+			<tr id="advertisement">
+				<td colspan="5" style="padding-top: 20px;"> Advertising</td>
+			</tr>
+			<tr>
+				<td colspan="5" ><input id="answer" type="text" disabled value="0"></td>
+			</tr>
+			<tr>
+				<td><button class="functions" type="button" onClick="clear();">AC</button></td>
+				<td><button class="functions" type="button" onClick="posneg();">+/-</button></td>
+				<td><button class="functions" type="button" onClick="sqrt();">√</button></td>
+				<td><button class="calculate" type="button" onClick="divide();">÷</button></td>
+			</tr>
+			<tr>
+				<td><button class="numbers" type="button">7</button></td>
+				<td><button class="numbers" type="button">8</button></td>
+				<td><button class="numbers" type="button">9</button></td>
+				<td><button class="calculate" type="button" onClick="multiply();">x</button></td>
+			</tr>
+			<tr>
+				<td><button class="numbers" type="button">4</button></td>
+				<td><button class="numbers" type="button">5</button></td>
+				<td><button class="numbers" type="button">6</button></td>
+				<td><button class="calculate" type="button" onClick="subtract();">-</button></td>
+			</tr>
+			<tr>
+				<td><button class="numbers" type="button">1</button></td>
+				<td><button class="numbers" type="button">2</button></td>
+				<td><button class="numbers" type="button">3</button></td>
+				<td><button class="calculate" type="button" onClick="add();">+</button></td>
+			</tr>
+			<tr>
+				<td colspan="2"><button class="numbers" id="zero" type="button">0</button></td>
+				<td><button class="numbers" type="button" onClick="decimal()">.</button></td>
+				<td><button class="calculate" type="button" onClick="ans();">=</button></td>
+			</tr>
+		</table>
+	</body>
+</html>
