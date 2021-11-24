@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--
+	littlecalcJQ.html
+	Bill Malkin 24-October-2021
+	Uses jQuery.
+	Runs as a calculator in a web browser.
+-->
+<html>
+	<head>
+		<!-- NOTE: jQuery API added here. For further info see https://jquery.com/ -->
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  		<title>Little Calculator - jQuery</title>
+		<style>
+			input {
+				text-align: right;
+			}
+		</style>
+		<script>
+			// Call the function loadWhenPageReady() when the page
+			// has been fully loaded into the browser.
+    		$(document).ready(loadWhenPageReady);
+    		
+    		function loadWhenPageReady() {
+    			// Attach the calculate() function as a Click event to the multiply element so that,
+    			// when the user clicks on the multiply element, it will call the calculate() function.
+    			$("#multiply").click(calculate);
+    			
+				function calculate() {
+					let value1Element = $("#value1");
+					let value1Number = value1Element.val();
+					console.log("value1Number = " + value1Number);
+					
+					let value2Element = $("#value2");
+					let value2Number = value2Element.val();
+					console.log("value2Number = " + value2Number);
+					
+					let answerElement = $("#answer");
+					let answerNumber = value1Number * value2Number;
+					console.log("answerNumber = " + answerNumber);
+					answerElement.val(answerNumber);
+				}
+				
+				// This function is just to show some of the things you can do with jQuery.
+				// Please note that everything you can do in jQuery can also be done in JavaScript. However
+				// jQuery is much more readable and very often you can do in one line of jQuery something that
+				// would take hundreds of lines of JavaScript.
+				
+				$("#multiply").mouseover(function(event) {
+        			console.log("mouseover the multiply button");
+        			
+         			let elementType = $(this).prop('nodeName');
+        			alert("elementType is " + elementType);
+        			
+       				let innerHtml = $(this).html().trim();
+        			alert("innerHtml is " + innerHtml);
+        			
+        			let parentElementType = $(this).parent().prop('nodeName');
+        			alert("parentElementType is " + parentElementType);
+        			
+         			let parentInnerHtml = $(this).parent().html().trim();
+        			alert("parentInnerHtml is " + parentInnerHtml);
+		        });
+
+			}
+/*
+    		$(document).ready(function() {
+    			$("#multiply").click(function() {
+					let value1Number = $("#value1").val();
+					console.log("value1Number = " + value1Number);
+					
+					let value2Number = $("#value2").val();
+					console.log("value2Number = " + value2Number);
+					
+					let answerNumber = value1Number * value2Number;
+					console.log("answerNumber = " + answerNumber);
+					$("#answer").val(answerNumber);
+				});
+			});
+*/
+		</script>
+	</head>
+	<body>
+		<!-- Set background colour to red = 00, green = 00, blue = ff, and transparency = 20. --> 
+		<table style="width: 400px; height: 100px; background-color: #0000ff20; margin-left: auto; margin-right: auto; margin-top: 20px;">
+			<tr>
+				<td colspan="5" style="padding-top: 20px;">
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 20%; text-align: center;">
+					<input id="value1" type="text" style="width: 90%; height: 50px;">
+				</td>
+				<td style="width: 20%; text-align: center;">
+					<button id="multiply" type="button" style="width: 50px; height: 50px; border-radius: 25px;">X</button>
+				</td>
+				<td style="width: 20%; text-align: center;">
+					<input id="value2" type="text" style="width: 90%; height: 50px;">
+				</td>
+				<td style="width: 20%; text-align: center;">
+					=
+				</td>
+				<td style="width: 20%; text-align: center;">
+					<input id="answer" type="text" style="width: 90%; height: 50px;" disabled value="0">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="5" style="text-align: center; padding-top: 20px;">
+					Instructions: Enter two numbers and click on the multiplication button in order to get the result.
+				</td>
+			<tr>
+		</table>
+	</body>
+</html>
