@@ -18,7 +18,7 @@ button {
 	font-size: 16px;
 }
 
-/* Added CSS */
+/*		ID		*/
 
 tr#advertisement {
 	text-align: center;
@@ -34,7 +34,13 @@ input#answer {
 	border: 0.5px solid white;
 	font-size: 20px;
 }
+button#zero {
+	width: 100%;
+	text-align: left;
+	padding-left: 18px;
+}
 
+/*		CLASS		*/
 button.calculate {
 	background-color: orange;
 }
@@ -47,10 +53,4 @@ button.functions {
 button.numbers {
 	color: white;
 	background-color: grey;
-}
-
-button#zero {
-	width: 100%;
-	text-align: left;
-	padding-left: 18px;
 }

@@ -2,9 +2,21 @@ $(document).ready(loadWhenPageReady);
 
 function loadWhenPageReady() 
 {
-	$("multiply").click(calculate);
+	$(".numbers").click(checkevent);
+	$(".calculate").click(checkevent);
 
-	function calculate()
+	$("#allclear").click(allclear);
+	$("#posneg").click(posneg);
+	$("#sqrt").click(sqrt);
+	$("#decimal").click(decimal);
+	
+	function checkevent()
+	{
+		var currentsymbol = $(this).html().trim();
+		$(currentsymbol).val(currentsymbol);
+		console.log("currentsymbol = " + currentsymbol);
+	}
+	function multiply()
 	{
 		let	val1Element	=	$("#value1");
 		let	val2Element	=	$("#value2");
